@@ -242,8 +242,8 @@ let NERDTreeAutoDeleteBuffer=1
 " 显示/隐藏 MiniBufExplorer 窗口
 map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
-map <C-Tab> :MBEbn<cr>
-map <C-S-Tab> :MBEbp<cr>
+map <Leader>mn :MBEbn<cr>
+map <Leader>mp :MBEbp<cr>
 
 
 
