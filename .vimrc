@@ -65,6 +65,15 @@ Plugin 'dyng/ctrlsf.vim'
 " 代码开发
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DrawIt'
+"Plugin 'SirVer/ultisnips'
+Plugin 'luochen1990/rainbow'
+
+" 工程管理
+Plugin 'scrooloose/nerdtree'
+Plugin 'fholgado/minibufexpl.vim'
+
+" 人文关怀
+"Plugin 'sjl/gundo.vim'  需要Python2.4
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -205,11 +214,44 @@ nnoremap <Leader>sp :CtrlSF<CR>
 
 " ===========================  Code Develop  ===========================
 
+" 模板补全 来自插件 UltiSnips
+" 存放路径 ~/.vim/bundle/ultisnips/mysnippets/cpp.snippets
+"let g:UltiSnipsSnippetDirectories=["mysnippets"]
+" UltiSnips 的 tab 键与 YCM 冲突，重新设定
+"let g:UltiSnipsExpandTrigger="<leader><tab>"
+"let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 
 
+" ===========================  Project Manage  ===========================
+" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+nmap <Leader>fl :NERDTreeToggle<CR>
+" 设置NERDTree子窗口宽度
+let NERDTreeWinSize=32
+" 设置NERDTree子窗口位置
+let NERDTreeWinPos="right"
+" 显示隐藏文件
+let NERDTreeShowHidden=1
+" NERDTree 子窗口中不显示冗余帮助信息
+let NERDTreeMinimalUI=1
+" 删除文件时自动删除文件对应 buffer
+let NERDTreeAutoDeleteBuffer=1
 
 
+" 显示/隐藏 MiniBufExplorer 窗口
+map <Leader>bl :MBEToggle<cr>
+" buffer 切换快捷键
+map <C-Tab> :MBEbn<cr>
+map <C-S-Tab> :MBEbp<cr>
+
+
+
+" ===========================  Others  ===========================
+" 调用 gundo 树
+"nnoremap <Leader>ud :GundoToggle<CR>
+
+let g:rainbow_active=1
 
 
 " 最后
